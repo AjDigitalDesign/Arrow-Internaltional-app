@@ -13,7 +13,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $fillable = ['post_title', 'slug', 'excerpt', 'post_content'];
 
     public function author(): BelongsTo
     {
