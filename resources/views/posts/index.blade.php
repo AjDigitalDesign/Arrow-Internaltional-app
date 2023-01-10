@@ -4,7 +4,6 @@
 @section('content')
     @if($posts->count())
 
-`
         <!-- Featured Post-->
         <x-featured-post :post="$posts[0]"  />
 
@@ -20,7 +19,7 @@
                                 <img class="card-img-top" src="{{@asset($post->image->path )}}" alt="..." />
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h5 card-title mb-3">{{$post->post_title}}</div></a>
+                                    <a class="text-decoration-none link-dark stretched-link" href="{{route('posts.show', $post)}}"><div class="h5 card-title mb-3">{{$post->post_title}}</div></a>
                                     <p class="card-text mb-0">{{$post->excerpt}}</p>
                                 </div>
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">

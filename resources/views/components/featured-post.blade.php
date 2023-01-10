@@ -13,7 +13,7 @@
 
                             <div class="h2 fw-bolder">{{$post->post_title}}</div>
                             <p>{{$post->excerpt}}</p>
-                            <a class="stretched-link text-decoration-none" href="#">
+                            <a class="stretched-link text-decoration-none" href="{{route('posts.show', $post)}}">
                                 Read more
                                 <i class="bi bi-arrow-right"></i>
                             </a>
