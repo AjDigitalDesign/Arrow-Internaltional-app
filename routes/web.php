@@ -34,6 +34,7 @@ Route::get('blog/{post:slug}', [PostController::class, 'show'])->name('posts.sho
 
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified', 'isadmin'])->group(function() {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
+    Route::resource('posts', \App\Http\Controllers\adminControllers\AdminPostsController::class);
 });
 
 Route::middleware('auth')->group(function () {

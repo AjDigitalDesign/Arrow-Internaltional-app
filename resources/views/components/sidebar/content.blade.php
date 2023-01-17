@@ -16,16 +16,16 @@
 
     <x-sidebar.dropdown
         title="Posts"
-        :active="Str::startsWith(request()->route()->uri(), 'buttons')"
+        :active="Str::startsWith(request()->route()->uri(), 'admin.posts.index')"
     >
         <x-slot name="icon">
             <x-heroicon-o-view-grid class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>
 
         <x-sidebar.sublink
-            title="Text button"
-            href="{{ route('buttons.text') }}"
-            :active="request()->routeIs('buttons.text')"
+            title="All Posts"
+            href="{{ route('admin.posts.index') }}"
+            :active="request()->routeIs('admin.posts.index')"
         />
         <x-sidebar.sublink
             title="Icon button"
@@ -33,9 +33,9 @@
             :active="request()->routeIs('buttons.icon')"
         />
         <x-sidebar.sublink
-            title="Text with icon"
-            href="{{ route('buttons.text-icon') }}"
-            :active="request()->routeIs('buttons.text-icon')"
+            title="Add New"
+            href="{{ route('admin.posts.create') }}"
+            :active="request()->routeIs('admin.posts.create')"
         />
     </x-sidebar.dropdown>
 
