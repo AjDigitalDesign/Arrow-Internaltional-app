@@ -22,6 +22,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Role::factory(1)->create();
+        Role::factory(1)->create([
+            'name' => 'admin'
+        ]);
         $users = User::factory(10)->create();
         foreach ($users as $user) {
             $user->image()->save(Image::factory()->make());
